@@ -47,6 +47,7 @@ public class ShaderReflection {
         }
 
         public boolean validate(Set expected) {
+            if(expected.bindings.isEmpty() && bindings.isEmpty()) return true;
             for (var binding : bindings) {
                 var expectedBinding = expected.getBindingAt(binding.binding);
                 if (expectedBinding == null) {
@@ -62,7 +63,7 @@ public class ShaderReflection {
                     return false;
                 }
             }
-            return true;
+            return !bindings.isEmpty();
         }
     }
     private ArrayList<Set> sets = new ArrayList<>();

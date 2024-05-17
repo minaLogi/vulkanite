@@ -22,7 +22,9 @@ import me.cortex.vulkanite.mixin.iris.MixinCelestialUniforms;
 import me.cortex.vulkanite.mixin.iris.MixinCommonUniforms;
 import net.irisshaders.iris.gl.buffer.ShaderStorageBuffer;
 import net.irisshaders.iris.texture.pbr.PBRTextureHolder;
+import net.irisshaders.iris.texture.pbr.PBRAtlasTexture;
 import net.irisshaders.iris.texture.pbr.PBRTextureManager;
+import net.irisshaders.iris.texture.pbr.TextureAtlasExtension;
 import net.irisshaders.iris.uniforms.CapturedRenderingState;
 import net.irisshaders.iris.uniforms.CommonUniforms;
 import net.irisshaders.iris.uniforms.SystemTimeUniforms;
@@ -191,7 +193,7 @@ public class VulkanPipeline {
 
             ArrayList<ShaderReflection.Binding> ssboBindings = new ArrayList<>();
             for (int id : ssboIds) {
-                ssboBindings.add(new ShaderReflection.Binding("", id, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 0, true));
+                ssboBindings.add(new ShaderReflection.Binding("", id, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 0, false));
             }
             var ssboSetExpected = new ShaderReflection.Set(ssboBindings);
 
