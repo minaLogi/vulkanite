@@ -1,7 +1,7 @@
 package me.cortex.vulkanite.compat;
 
-import net.coderbot.iris.shaderpack.ProgramDirectives;
-import net.coderbot.iris.shaderpack.ProgramSet;
+import net.irisshaders.iris.shaderpack.properties.ProgramDirectives;
+import net.irisshaders.iris.shaderpack.programs.ProgramSet;
 
 public class RaytracingShaderSource {
     public record RayHitSource(String close, String any, String intersection) {}

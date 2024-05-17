@@ -7,7 +7,7 @@ import me.cortex.vulkanite.lib.memory.VAccelerationStructure;
 import me.cortex.vulkanite.lib.memory.VBuffer;
 import me.cortex.vulkanite.lib.other.VUtil;
 import me.cortex.vulkanite.lib.other.sync.VFence;
-import net.coderbot.iris.vertices.IrisVertexFormats;
+import net.irisshaders.iris.vertices.IrisVertexFormats;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.RenderLayer;

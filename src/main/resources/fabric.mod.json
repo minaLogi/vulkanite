@@ -14,8 +14,8 @@
     "vulkanite.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.21",
-    "iris": "=1.6.9",
-    "sodium": "=0.5.3"
+    "fabricloader": ">=0.15.11",
+    "iris": "=1.7.0",
+    "sodium": "=0.5.8"
   }
 }

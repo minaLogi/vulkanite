@@ -3,8 +3,8 @@ package me.cortex.vulkanite.mixin.iris;
 import me.cortex.vulkanite.client.Vulkanite;
 import me.cortex.vulkanite.compat.IVGBuffer;
 import me.cortex.vulkanite.lib.memory.VGBuffer;
-import net.coderbot.iris.gl.IrisRenderSystem;
-import net.coderbot.iris.gl.buffer.ShaderStorageBuffer;
+import net.irisshaders.iris.gl.IrisRenderSystem;
+import net.irisshaders.iris.gl.buffer.ShaderStorageBuffer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -35,7 +35,7 @@ public class MixinShaderStorageBuffer implements IVGBuffer {
         }
     }
 
-    @Redirect(method = "destroy", at = @At(value = "INVOKE", target = "Lnet/coderbot/iris/gl/IrisRenderSystem;deleteBuffers(I)V"))
+    @Redirect(method = "destroy", at = @At(value = "INVOKE", target = "Lnet/irisshaders/iris/gl/IrisRenderSystem;deleteBuffers(I)V"))
     private void redirectDelete(int id) {
         if (vkBuffer != null) {
             Vulkanite.INSTANCE.addSyncedCallback(vkBuffer::free);
